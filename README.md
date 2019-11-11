@@ -13,3 +13,6 @@ This is an admin page for an ecommerce website. It has core CRUD functionalities
 
 ## DELETE
 ![](work/delete.gif)
+
+Server and API created with C# and ASP.NET Core 
+Front End created with React
