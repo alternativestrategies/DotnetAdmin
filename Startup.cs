@@ -29,7 +29,7 @@ namespace products
             var database = System.Environment.GetEnvironmentVariable("DB_DATABASE");
             var host = System.Environment.GetEnvironmentVariable("DB_HOST");
             var user = System.Environment.GetEnvironmentVariable("DB_USER");
-            string connection = $"Server={host};Port={port};Database={database};User={user};Password={password};";
+            string connection = $"Server={host},{port};Database={database};User={user};Password={password};SSL Mode=None";
 
             // string connection = $"Server=localhost;Port={port};Database={database};User=root;Password={password};";
             services.AddDbContextPool<ProductsContext>(option => option.UseMySql(connection));
@@ -56,7 +56,7 @@ namespace products
                 app.UseHsts();
             }
 
-            app.UseHttpsRedirection();
+            // app.UseHttpsRedirection();
             app.UseStaticFiles();
             app.UseSpaStaticFiles();
 
